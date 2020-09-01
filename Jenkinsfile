@@ -17,8 +17,8 @@ pipeline {
         stage('Build Image') {
             steps {
                 echo "2.Build Docker Image Stage"
-                sh "sudo docker build --network host -t ${repo_name}/${app_name}:latest ."
-                sh "sudo docker tag ${repo_name}/${app_name}:latest ${repo_name}/${app_name}:${build_tag}"
+                sh 'docker build --network host -t ${repo_name}/${app_name}:latest .'
+                sh 'docker tag ${repo_name}/${app_name}:latest ${repo_name}/${app_name}:${build_tag}'
             }
 
         }
